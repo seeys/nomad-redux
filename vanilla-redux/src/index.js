@@ -43,6 +43,7 @@ store.subscribe(() => console.log(store.getState()));
 
 const paintTodos = () => {
   const toDos = store.getState();
+  ul.innerHTML = "";
   toDos.forEach((toDo) => {
     const li = document.createElement("li");
     const btn = document.createElement("button");
@@ -54,6 +55,7 @@ const paintTodos = () => {
     ul.appendChild(li);
   });
 };
+
 store.subscribe(paintTodos);
 
 const onSubmit = (e) => {
